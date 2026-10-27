@@ -66,8 +66,10 @@ pnpm-debug.log*
 *.db
 *.sqlite
 *.sqlite3
+*.joblib
 backend/data_storage/*.db
 backend/data_storage/*.sqlite*
+backend/artifacts/models/*.joblib
 
 # Local OS & Editor artifacts
 .DS_Store

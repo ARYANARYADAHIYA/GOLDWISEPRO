@@ -1,0 +1,16 @@
+.git
+.venv
+venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.coverage
+htmlcov
+backend/tests
+backend/data_storage/*.db
+backend/data_storage/*.sqlite*
+backend/artifacts/models/*.joblib
+frontend/node_modules
+*.log

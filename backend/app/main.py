@@ -58,6 +58,9 @@ app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
     description="Institutional Commodity Relative-Value Research and Anomaly Investigation Platform",
+    docs_url="/api/docs",
+    redoc_url="/api/redoc",
+    openapi_url="/api/openapi.json",
     lifespan=lifespan
 )
 
@@ -69,16 +72,27 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Mount API router with /api prefix (primary standard)
 app.include_router(api_router, prefix=settings.API_V1_STR)
 
-@app.get("/")
+# Also mount API router without prefix as a fallback for serverless environments
+# where the /api path segment may be pre-stripped by the edge router
+app.include_router(api_router, include_in_schema=False)
+
+@app.get("/", include_in_schema=False)
+@app.get("/api", include_in_schema=False)
 def root():
     return {
         "app": "GOLDWISE PRO",
         "status": "ONLINE",
-        "docs_url": "/docs",
+        "docs_url": "/api/docs",
         "api_v1": settings.API_V1_STR
     }
+
+@app.get("/docs", include_in_schema=False)
+def docs_redirect():
+    from fastapi.responses import RedirectResponse
+    return RedirectResponse(url="/api/docs")
 
 if __name__ == "__main__":
     import uvicorn
