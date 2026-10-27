@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #fbfbfb;
+    --bg-card: #ffffff;
+    --border-subtle: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --text-muted: #6b7280;
+    --accent-gold: #c5a059;
+    --accent-gold-dark: #9f7d3b;
+    --accent-gold-light: #fbf8f1;
+    --verdict-investigate: #065f46;
+    --verdict-investigate-bg: #ecfdf5;
+    --verdict-suppressed: #991b1b;
+    --verdict-suppressed-bg: #fef2f2;
+    --verdict-insufficient: #92400e;
+    --verdict-insufficient-bg: #fffbeb;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom crisp table styles & scrollbar for institutional quant look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}

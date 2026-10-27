@@ -1,0 +1,24 @@
+{
+  "name": "goldwise-pro",
+  "version": "1.0.0",
+  "description": "Institutional-grade MCX Gold Relative-Value Research & Anomaly Investigation Platform",
+  "private": true,
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "node scripts/run-backend.js",
+    "test:backend": "node scripts/run-pytest.js",
+    "test:frontend": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "mcx",
+    "gold",
+    "quantitative-finance",
+    "relative-value",
+    "stat-arb",
+    "machine-learning",
+    "institutional-fintech"
+  ],
+  "author": "GoldWise Pro Engineering Team",
+  "license": "Proprietary"
+}
